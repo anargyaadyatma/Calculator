@@ -1,6 +1,81 @@
-# include <stdio.h>
+#include <stdio.h>
+
+void plus();
+void minus();
+void times();
+void devide();
+void power();
+//void integral();
 int main()
 {
-  printf("Choose operation");
+    char op;
+    //int start;
+    printf("List of operation:\n + (tambah)\n - (kurang)\n * (kali)\n / (bagi)\n ^ (pangkat)\n i (integral)\n");
+    printf("Operation: ");
+    scanf(" %c", &op);
+    if (op == '+')
+    { plus();
+    }
+    else if (op == '-')
+    { minus();
+    }
+    else if (op == '*')
+    { times();
+    }
+    else if (op == '/')
+    { devide();
+    }
+    else if (op == '^')
+    { power();
+    }
+    //else if (start == 3)
+    //{ integral();
+    //}
+    return 0;
+} void plus()
+{   double num1;
+    double num2;
+    printf("Angka pertama: ");
+    scanf("%lf", &num1);
+    printf("Angka kedua: ");
+    scanf("%lf", &num2);
+    printf("%f + %f = %f\n", num1, num2, num1+num2);   
+} 
+void minus()
+{   double num1;
+    double num2;
+    printf("Angka pertama: ");
+    scanf("%lf", &num1);
+    printf("Angka kedua: ");
+    scanf("%lf", &num2);
+    printf("%f - %f = %f\n", num1, num2, num1-num2);  
+} 
+void power()
+{   double num1;
+    int num2;
+    printf("Basis: ");
+    scanf("%lf", &num1);
+    printf("Pangkat: ");
+    scanf("%d", &num2);
+    //printf("%f ^ %d = %f", num1, num2, );
+    
+}
+void times()
+{   double num1;
+    double num2;
+    printf("Angka pertama: ");
+    scanf("%lf", &num1);
+    printf("Angka kedua: ");
+    scanf("%lf", &num2);
+    printf("%f * %f = %f\n", num1, num2, num1*num2);
+}
+void devide()
+{   double num1;
+    double num2;
+    printf("Angka pertama: ");
+    scanf("%lf", &num1);
+    printf("Angka kedua: ");
+    scanf("%lf", &num2);
+    printf("%f / %f = %f\n", num1, num2, num1/num2);
 
 }
