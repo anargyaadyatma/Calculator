@@ -9,8 +9,9 @@ void power();
 int main()
 {
     char op;
+    
     //int start;
-    printf("List of operation:\n + (tambah)\n - (kurang)\n * (kali)\n / (bagi)\n ^ (pangkat)\n i (integral)\n");
+    printf("List of operation:\n + (tambah)\n - (kurang)\n * (kali)\n / (bagi)\n ^ (pangkat)\n i (integral polinomial ax^3 - bx^2 + cx + d)\n");
     printf("Operation: ");
     scanf(" %c", &op);
     if (op == '+')
@@ -51,13 +52,18 @@ void minus()
     printf("%f - %f = %f\n", num1, num2, num1-num2);  
 } 
 void power()
-{   double num1;
-    int num2;
-    printf("Basis: ");
-    scanf("%lf", &num1);
-    printf("Pangkat: ");
-    scanf("%d", &num2);
-    //printf("%f ^ %d = %f", num1, num2, );
+{    int base, exp, exp2;
+    unsigned long result = 1;
+    printf("masukkan basis: ");
+    scanf("%d", &base);
+    printf("Masukkan eksponen: ");
+    scanf("%d", &exp);
+    exp2 = exp;
+    while (exp != 0) {
+        result *= base;
+        exp--;
+    }
+    printf("%d^%d = %lu\n", base, exp2, result);
     
 }
 void times()
