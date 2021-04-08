@@ -6,6 +6,97 @@ void times();
 void devide();
 void power();
 //void integral();
+void plus()
+{   double num1, num2;
+    printf("Angka pertama: ");
+    scanf("%lf", &num1);
+    printf("Angka kedua: ");
+    scanf("%lf", &num2);
+    printf("%f + %f = %f\n", num1, num2, num1+num2);   
+} 
+void minus()
+{   double num1, num2;
+    printf("Angka pertama: ");
+    scanf("%lf", &num1);
+    printf("Angka kedua: ");
+    scanf("%lf", &num2);
+    printf("%f - %f = %f\n", num1, num2, num1-num2);  
+} 
+void times()
+{   double num1, num2;
+    printf("Angka pertama: ");
+    scanf("%lf", &num1);
+    printf("Angka kedua: ");
+    scanf("%lf", &num2);
+    printf("%f * %f = %f\n", num1, num2, num1*num2);
+}
+void devide()
+{   double num1, num2;
+    printf("Angka pertama: ");
+    scanf("%lf", &num1);
+    printf("Angka kedua: ");
+    scanf("%lf", &num2);
+    printf("%f / %f = %f\n", num1, num2, num1/num2);
+
+}
+void power()
+{   int base, exp, exp2;
+    unsigned long result = 1;
+    printf("masukkan basis: ");
+    scanf("%d", &base);
+    printf("Masukkan eksponen: ");
+    scanf("%d", &exp);
+    exp2 = exp;
+    while (exp > 0) {
+        result *= base;
+        exp--;
+    }
+    printf("%d^%d = %lu\n", base, exp2, result);   
+}
+void integral()
+{   int pow, exp, i, j, k, upLimit, botLimit,part, x1, x2 ;
+  double res, dx, suku1, suku2;
+  double koef[10];
+    //Fungsi integral = ax^3 - bx^2 + cx +d
+  printf("masukkan batas atas integral: ");
+  scanf("%d", &upLimit);
+  printf("masukkan batas bawah integral: ");
+  scanf("%d", &botLimit); 
+    if (upLimit >= botLimit){
+      printf("masukkan pangkat maksimum: ");
+      scanf("%d", &exp);
+      printf("Masukkan jumlah partisi: ");
+      scanf("%d", &part);
+      k = 0;
+        for (i = exp; i >= 0; i--, k++){
+          printf("Masukkan koefisien x^%d: ", i);
+          scanf("%lf", &koef[k]);              
+        }        
+      res = 0;
+      pow = 1;
+      dx = (upLimit-botLimit)/part;
+      x1 = botLimit;      
+      while (x1 <= upLimit){
+        for (j = x1; j == upLimit - part; j = j + dx){
+          while (exp > 0) {
+            x2 = x1 + dx;
+            pow *= x1;
+            suku1 = 
+            pow *= x2;
+            pow--;  
+            res = (suku1 +suku2)/2.0 * dx;
+            res = res + res;
+          }
+        }   
+      printf("Hasil integral = %f\n", res);  
+      printf("Hey.. That's pretty good\n");
+      break;
+    }
+        
+    } else{
+       printf("Nilai batas invalid!\n");
+   }   
+}
 int main()
 {
     char op;
@@ -33,55 +124,4 @@ int main()
     //{ integral();
     //}
     return 0;
-} void plus()
-{   double num1;
-    double num2;
-    printf("Angka pertama: ");
-    scanf("%lf", &num1);
-    printf("Angka kedua: ");
-    scanf("%lf", &num2);
-    printf("%f + %f = %f\n", num1, num2, num1+num2);   
 } 
-void minus()
-{   double num1;
-    double num2;
-    printf("Angka pertama: ");
-    scanf("%lf", &num1);
-    printf("Angka kedua: ");
-    scanf("%lf", &num2);
-    printf("%f - %f = %f\n", num1, num2, num1-num2);  
-} 
-void power()
-{    int base, exp, exp2;
-    unsigned long result = 1;
-    printf("masukkan basis: ");
-    scanf("%d", &base);
-    printf("Masukkan eksponen: ");
-    scanf("%d", &exp);
-    exp2 = exp;
-    while (exp != 0) {
-        result *= base;
-        exp--;
-    }
-    printf("%d^%d = %lu\n", base, exp2, result);
-    
-}
-void times()
-{   double num1;
-    double num2;
-    printf("Angka pertama: ");
-    scanf("%lf", &num1);
-    printf("Angka kedua: ");
-    scanf("%lf", &num2);
-    printf("%f * %f = %f\n", num1, num2, num1*num2);
-}
-void devide()
-{   double num1;
-    double num2;
-    printf("Angka pertama: ");
-    scanf("%lf", &num1);
-    printf("Angka kedua: ");
-    scanf("%lf", &num2);
-    printf("%f / %f = %f\n", num1, num2, num1/num2);
-
-}
